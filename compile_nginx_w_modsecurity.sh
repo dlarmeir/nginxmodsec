@@ -26,22 +26,13 @@ cd /usr/src/nginx-1.8.1/
 
 # Build Nginx
 ./configure \
-  --user=www-data \
-  --group=www-data \
-  --with-pcre-jit \
-  --with-debug \
-  --with-ipv6 \
-  --with-mp4_module \
-  --with-http_stub_status_module \
-  --with-stream_ssl_module \ 
-  --http_gzip_module \
-  --http_auth_basic_module \
-  --http_rewrite_module \
-  --http_proxy_module \ 
-  --http_limit_req_module \
-  --with-http_ssl_module \
-  --add-module=/usr/src/ModSecurity/nginx/modsecurity
-
+   --user=www-data \
+   --group=www-data \
+   --with-pcre-jit \
+   --with-debug \
+   --with-ipv6 \
+   --with-http_ssl_module \
+   --add-module=/usr/src/ModSecurity/nginx/modsecurity
 make
 make install
 
