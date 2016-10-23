@@ -48,7 +48,7 @@ dpkg-buildpackage -uc -b
 # Install Nginx w/Mod_Security
 echo "********Installing Packages********"
 sleep 2
-dpkg -i nginx-full_1.10.1-3+xenial0_amd64.deb && apt-get -f install -y
+dpkg -i /usr/src/nginx-full_1.10.1-3+xenial0_amd64.deb && apt-get -f install -y
 
 echo "********Build Complete - Email dustin@larmeir.com if you encounter issues********"
 
