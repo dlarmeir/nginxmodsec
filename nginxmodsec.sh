@@ -9,7 +9,7 @@
 # Grab Buildtools and Deps 
 echo "********Installing Tools and Dependencies********"
 sleep 2
-apt-get install git build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-dev libxml2-dev libcurl4-openssl-dev
+apt-get install git build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-dev libxml2-dev libcurl4-openssl-dev -y
 
 # Add The Official Nginx PPA repo with build sources
 add-apt-repository ppa:nginx/stable -y
