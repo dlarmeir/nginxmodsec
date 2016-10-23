@@ -10,7 +10,6 @@
 echo "********Installing Tools and Dependencies********"
 sleep 2
 apt-get install git build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-dev libxml2-dev libcurl4-openssl-dev -y
-
 # Add The Official Nginx PPA repo with build sources
 add-apt-repository ppa:nginx/stable -y
 echo "deb-src http://ppa.launchpad.net/nginx/stable/ubuntu xenial main" >>/etc/apt/sources.list.d/nginx-ubuntu-stable-xenial.list
@@ -20,13 +19,14 @@ apt-get update
 cd /usr/src/
 apt-get build-dep nginx -y
 apt-get source nginx
+version=$(ls -d /usr/src/ */ | grep nginx | sed s'/.$//')
 
 # Fetch Mod_Security Source
 echo "********Fetching Mod_security Source Code********"
 sleep 2
-cd /usr/src/nginx-1.10.1/debian/modules
+cd /usr/src/$version/debian/modules
 git clone https://github.com/SpiderLabs/ModSecurity.git
-cd /usr/src/nginx-1.10.1/debian/modules/ModSecurity/
+cd /usr/src/$version/debian/modules/ModSecurity/
 
 # Build ModSecurity stand alone module
 echo "********Compiling Mod_Security Source Code********"
@@ -38,10 +38,10 @@ make
 # Compile Nginx w/Mod_Security module
 echo "********Updating Debian Rules********"
 sleep 2
-cd /usr/src/nginx-1.10.1/
-sed -i '105i\\ 			--add-module=$(MODULESDIR)/ModSecurity/nginx/modsecurity \\' /usr/src/nginx-1.10.1/debian/rules
+cd /usr/src/$version/
+sed -i '105i\\ 			--add-module=$(MODULESDIR)/ModSecurity/nginx/modsecurity \\' /usr/src/$version/debian/rules
 
-echo "********Building Debian Packages********"
+#echo "********Building Debian Packages********"
 sleep 2
 dpkg-buildpackage -uc -b
 
