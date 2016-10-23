@@ -5,10 +5,10 @@
 # Nginx w/Mod_Security Build #
 ##############################
 
-#Grab Buildtools and Deps 
+# Grab Buildtools and Deps 
 apt-get install git build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-dev libxml2-dev libcurl4-openssl-dev
 
-#Fetch Nginx Source
+# Fetch Mod_Security Source
 cd /usr/src
 git clone https://github.com/SpiderLabs/ModSecurity.git
 cd /usr/src/ModSecurity/
@@ -18,4 +18,30 @@ cd /usr/src/ModSecurity/
 ./configure --enable-standalone-module
 make
 
+# Fetch Nginx Source
+cd /usr/src
+wget http://nginx.org/download/nginx-1.8.1.tar.gz
+tar -xvzf nginx-1.8.1.tar.gz
+cd /usr/src/nginx-1.8.1/
+
+# Build Nginx
+./configure \
+  --user=www-data \
+  --group=www-data \
+  --with-pcre-jit \
+  --with-debug \
+  --with-ipv6 \
+  --with-mp4_module \
+  --with-http_stub_status_module \
+  --with-stream_ssl_module \ 
+  --http_gzip_module \
+  --http_auth_basic_module \
+  --http_rewrite_module \
+  --http_proxy_module \ 
+  --http_limit_req_module \
+  --with-http_ssl_module \
+  --add-module=/usr/src/ModSecurity/nginx/modsecurity
+
+make
+make install
 
