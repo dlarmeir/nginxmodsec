@@ -17,13 +17,13 @@ I'm currently writing supporting scripts that will also include the mod_security
 
 ## Installation 
 
-``# git clone https://github.com/dlarmeir/nginxmodsec.git
+``# git clone https://github.com/dlarmeir/nginxmodsec.git``
   
-  # sudo su
+``# sudo su``
   
-  # chmod +x nginxmodsec.sh
+``# chmod +x nginxmodsec.sh``
   
-  # sh nginxmodsec.sh``
+``# sh nginxmodsec.sh``
 
 ## Contributors
 
