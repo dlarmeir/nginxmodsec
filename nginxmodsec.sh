@@ -50,5 +50,11 @@ echo "********Installing Packages********"
 sleep 2
 dpkg -i /usr/src/nginx-full_1.10.1-3+xenial0_amd64.deb && apt-get -f install -y
 
+# Install Mod_Security CRS
+echo "********Installing Mod_Security CRS********"
+cd /etc/nginx/
+git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
+cd /etc/nginx/owasp-modsecurity-crs/
+
 echo "********Build Complete - Email dustin@larmeir.com if you encounter issues********"
 
