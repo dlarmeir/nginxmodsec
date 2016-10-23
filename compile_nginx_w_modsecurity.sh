@@ -22,20 +22,21 @@ echo "********Installing Tools and Dependencies********"
 #apt-get source nginx
 
 # Fetch Mod_Security Source
-echo "********Fetching Mod_security Source Code********"
-sleep 2
-cd /usr/src/nginx-1.10.1/debian/modules
-git clone https://github.com/SpiderLabs/ModSecurity.git
-cd /usr/src/nginx-1.10.1/debian/modules/ModSecurity/
+#echo "********Fetching Mod_security Source Code********"
+#sleep 2
+#cd /usr/src/nginx-1.10.1/debian/modules
+#git clone https://github.com/SpiderLabs/ModSecurity.git
+#cd /usr/src/nginx-1.10.1/debian/modules/ModSecurity/
 
 # Build ModSecurity stand alone module
 echo "********Compiling Mod_Security Source Code********"
-sleep 2
-./autogen.sh
-./configure --enable-standalone-module
-make
+#sleep 2
+#./autogen.sh
+#./configure --enable-standalone-module
+#make
 
-# Fetch Nginx Source
+# Compile Nginx w/Mod_Security module
+sed -i '105i\\ 			--add-module=$(MODULESDIR)/ModSecurity/nginx \\' /usr/src/nginx-1.10.1/debian/rules
 
 # Build Nginx
 
