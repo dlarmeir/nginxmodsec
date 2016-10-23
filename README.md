@@ -6,10 +6,10 @@
 
 This GIT repository contains simple BASH scripts that I've written to automatically deploy Nginx installations with Mod_Security support.
 
-### nginxmodsec.sh
+### nginxmodsec.sh (Recommended)
 This is the recommended for Production deployments and is built specifically to support Ubuntu 16.04 and it's native packiging tools.
 
-### nginxmodsecleg.sh 
+### nginxmodsecleg.sh (Not Recommended)
 This is a rougher approach that builds only off of the source and is meant to be a template for highly customized deployments.
 
 nginxmodsec.sh  | nginxmodsecleg.sh
@@ -26,6 +26,7 @@ The Mod_security CRS is included with nginxmodsec.sh but must be enabled on a vi
 i.e.
 
  ``ModSecurityEnabled on;``
+
  ``ModSecurityConfig modsecurity.conf;``
 
 I'll provide a tutorial on finish up the installation soon but there are plenty of good articles out there.
