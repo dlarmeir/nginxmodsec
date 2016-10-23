@@ -48,7 +48,8 @@ dpkg-buildpackage -uc -b
 # Install Nginx w/Mod_Security
 echo "********Installing Packages********"
 sleep 2
-dpkg -i /usr/src/nginx-full* && apt-get -f install -y
+dpkg -i /usr/src/nginx-full*
+apt-get -f install -y 
 
 # Install Mod_Security CRS
 echo "********Installing Mod_Security CRS********"
