@@ -7,7 +7,7 @@
 This GIT repository contains simple BASH scripts that I've written to automatically deploy Nginx installations with Mod_Security support.
 
 ### nginxmodsec.sh (Recommended)
-This is the recommended for Production deployments and is built specifically to support Ubuntu 16.04 and it's native packiging tools.
+This is the recommended for Production deployments and is built specifically to support Ubuntu 16.04 and it's native packaging tools.
 
 ### nginxmodsecleg.sh (Not Recommended)
 This is a rougher approach that builds only off of the source and is meant to be a template for highly customized deployments.
