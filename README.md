@@ -1,4 +1,4 @@
-# nginxmodsec BETA
+# NGINXMODSEC BETA
 ![picture alt](https://www.larmeir.com/wp-content/uploads/2016/08/logo3sm.png
  "")
 
@@ -18,7 +18,6 @@ nginxmodsec.sh  | nginxmodsecleg.sh
 minimal effort  | needs extra work
 startup scripts | no startup scripts
 Ubuntu Stable   | Nginx Stable
-Production	| Edgy
 CRS Included	| No CRS Included
 
 The Mod_security CRS is included with nginxmodsec.sh but must be enabled on a virtual host. 
