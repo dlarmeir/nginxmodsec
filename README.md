@@ -1,4 +1,4 @@
-# nginxmodsec 
+# nginxmodsec BETA
 ![picture alt](https://www.larmeir.com/wp-content/uploads/2016/08/logo3sm.png
  "")
 
