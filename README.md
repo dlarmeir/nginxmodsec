@@ -1,10 +1,10 @@
-# NGINXMODSEC BETA
+# NGINXMODSEC **BETA**
 ![picture alt](https://www.larmeir.com/wp-content/uploads/2016/08/logo3sm.png
  "")
 
 ## Synopsis
 
-This GIT repository contains simple BASH scripts that I've written to automatically deploy Nginx installations with Mod_Security support.
+This GIT repository contains simple BASH scripts that I've written to automatically deploy Nginx installations with Mod_Security support. It's currently a POC but I am working to make this solid enough for production.
 
 ### nginxmodsec.sh (Recommended)
 This is the recommended for Production deployments and is built specifically to support Ubuntu 16.04 and it's native packaging tools.
